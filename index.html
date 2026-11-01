@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ABC Austin Service Express – HVAC Experts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --color-bg:#050508;
+  --color-accent:#14b8a6;
+  --color-card-bg:rgba(255,255,255,0.08);
+  --color-card-border:rgba(255,255,255,0.1);
+  --font-base:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-base:clamp(1rem,1vw + .5rem,1.25rem);
+  --fs-h1:clamp(2.5rem,5vw + 1rem,4rem);
+  --fs-h2:clamp(2rem,4vw + .8rem,3rem);
+  --fs-h3:clamp(1.5rem,3vw + .6rem,2.25rem);
+  --gap:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;}
+body{
+  background:var(--color-bg);
+  color:#fff;
+  font-family:var(--font-base);
+  font-size:var(--fs-base);
+  line-height:1.5;
+  overflow-x:hidden;
+}
+a{color:var(--color-accent);text-decoration:none;}
+a:hover{opacity:.8;}
+.container{padding:calc(var(--gap)*4) var(--gap);}
+section{margin-bottom:calc(var(--gap)*8);}
+h1,h2,h3{font-weight:600;line-height:1.2;margin-bottom:calc(var(--gap)*2);}
+h1{font-size:var(--fs-h1);}
+h2{font-size:var(--fs-h2);}
+h3{font-size:var(--fs-h3);}
+button{cursor:pointer;}
+.skip-link{
+  position:absolute;
+  top:-40px;
+  left:0;
+  background:#000;
+  color:#fff;
+  padding:8px;
+  z-index:100;
+}
+.skip-link:focus{top:0;}
+.glass{
+  background:var(--color-card-bg);
+  border:1px solid var(--color-card-border);
+  border-radius:12px;
+  backdrop-filter:blur(8px);
+  padding:calc(var(--gap)*4);
+}
+.btn{
+  display:inline-block;
+  background:var(--color-accent);
+  color:#000;
+  padding:calc(var(--gap)*2) calc(var(--gap)*4);
+  border:none;
+  border-radius:6px;
+  font-weight:600;
+  text-align:center;
+}
+.btn:hover{opacity:.9;}
+.grid{
+  display:grid;
+  gap:calc(var(--gap)*4);
+}
+@media(min-width:640px){
+  .services{grid-template-columns:repeat(2,1fr);}
+}
+@media(min-width:1024px){
+  .services{grid-template-columns:repeat(4,1fr);}
+}
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .6s ease-out, transform .6s ease-out;
+}
+.reveal.visible{opacity:1;transform:none;}
+.accordion button{
+  width:100%;
+  text-align:left;
+  background:none;
+  border:none;
+  padding:calc(var(--gap)*2);
+  font-size:var(--fs-h3);
+  color:#fff;
+}
+.accordion button::after{
+  content:"▸";
+  float:right;
+  transition:transform .3s;
+}
+.accordion button[aria-expanded="true"]::after{
+  transform:rotate(90deg);
+}
+.accordion .content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease;
+  padding:0 calc(var(--gap)*2);
+}
+.accordion .content p{
+  padding:calc(var(--gap)*2) 0;
+}
+@media(max-width:639px){
+  .container{padding:calc(var(--gap)*2);}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="container">
+  <h1>ABC Austin Service Express</h1>
+  <p class="glass" style="max-width:600px;">Your trusted HVAC partner in Austin, TX – Fast, reliable, and family‑owned service.</p>
+  <a href="#contact" class="btn" style="margin-top:calc(var(--gap)*4);display:inline-block;">Schedule Service</a>
+</header>
+
+<main id="main" class="container">
+
+  <section class="services grid reveal" aria-labelledby="services-heading">
+    <h2 id="services-heading">Our Services</h2>
+    <div class="glass">
+      <h3>AC Repair</h3>
+      <p>Quick diagnostics and repair to keep your home comfortable.</p>
+    </div>
+    <div class="glass">
+      <h3>AC Installation</h3>
+      <p>Professional installation of energy‑efficient systems.</p>
+    </div>
+    <div class="glass">
+      <h3>Duct Cleaning</h3>
+      <p>Improve air quality and system efficiency with thorough cleaning.</p>
+    </div>
+    <div class="glass">
+      <h3>Indoor Air Quality</h3>
+      <p>Solutions for healthier indoor environments.</p>
+    </div>
+  </section>
+
+  <section class="highlights grid reveal" aria-labelledby="highlights-heading" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+    <h2 id="highlights-heading">Why Choose Us</h2>
+    <div class="glass">
+      <h3>Family Owned</h3>
+      <p>We treat every customer like a neighbor.</p>
+    </div>
+    <div class="glass">
+      <h3>24/7 Emergency</h3>
+      <p>Ready to respond whenever you need us.</p>
+    </div>
+    <div class="glass">
+      <h3>Satisfaction Guaranteed</h3>
+      <p>Our work is backed by a full guarantee.</p>
+    </div>
+  </section>
+
+  <section class="faq reveal" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
+    <div class="accordion">
+      <div>
+        <button aria-expanded="false" aria-controls="faq1">What areas do you serve?</button>
+        <div id="faq1" class="content" role="region" aria-labelledby="faq1">
+          <p>We serve Austin and surrounding Greater Austin areas.</p>
+        </div>
+      </div>
+      <div>
+        <button aria-expanded="false" aria-controls="faq2">Do you offer financing?</button>
+        <div id="faq2" class="content" role="region" aria-labelledby="faq2">
+          <p>Yes, flexible financing options are available for qualifying projects.</p>
+        </div>
+      </div>
+      <div>
+        <button aria-expanded="false" aria-controls="faq3">How quickly can you respond to an emergency?</button>
+        <div id="faq3" class="content" role="region" aria-labelledby="faq3">
+          <p>We aim to arrive within 1‑2 hours of your call, 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact glass reveal" id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Get In Touch</h2>
+    <form action="mailto:info@abcaustin.com" method="post" enctype="text/plain">
+      <div style="margin-bottom:calc(var(--gap)*2);">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;">
+      </div>
+      <div style="margin-bottom:calc(var(--gap)*2);">
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;">
+      </div>
+      <div style="margin-bottom:calc(var(--gap)*2);">
+        <label for="phone">Phone</label><br>
+        <input type="tel" id="phone" name="phone" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;">
+      </div>
+      <div style="margin-bottom:calc(var(--gap)*2);">
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="4" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;"></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p style="margin-top:calc(var(--gap)*4);"><strong>Phone:</strong> <a href="tel:+15127890123">(512) 789-0123</a></p>
+  </section>
+
+</main>
+
+<footer class="container" style="font-size:0.9rem;">
+  <p>&copy; 2026 ABC Austin Service Express. All rights reserved.</p>
+  <p>1234 Austin St, Austin, TX 78701 | <a href="mailto:info@abcaustin.com">info@abcaustin.com</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Accordion
+  const accButtons = document.querySelectorAll('.accordion button');
+  accButtons.forEach(btn=>{
+    btn.addEventListener('click',()=> {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded',!expanded);
+      const content = document.getElementById(btn.getAttribute('aria-controls'));
+      if(!expanded){
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = null;
+      }
+    });
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.1});
+  reveals.forEach(el=>observer.observe(el));
+});
+</script>
+</body>
+</html>
