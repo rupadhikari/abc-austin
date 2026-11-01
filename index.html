@@ -1,247 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ABC Austin Service Express – HVAC Experts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-:root{
-  --color-bg:#050508;
-  --color-accent:#14b8a6;
-  --color-card-bg:rgba(255,255,255,0.08);
-  --color-card-border:rgba(255,255,255,0.1);
-  --font-base:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --fs-base:clamp(1rem,1vw + .5rem,1.25rem);
-  --fs-h1:clamp(2.5rem,5vw + 1rem,4rem);
-  --fs-h2:clamp(2rem,4vw + .8rem,3rem);
-  --fs-h3:clamp(1.5rem,3vw + .6rem,2.25rem);
-  --gap:8px;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{font-size:16px;}
-body{
-  background:var(--color-bg);
-  color:#fff;
-  font-family:var(--font-base);
-  font-size:var(--fs-base);
-  line-height:1.5;
-  overflow-x:hidden;
-}
-a{color:var(--color-accent);text-decoration:none;}
-a:hover{opacity:.8;}
-.container{padding:calc(var(--gap)*4) var(--gap);}
-section{margin-bottom:calc(var(--gap)*8);}
-h1,h2,h3{font-weight:600;line-height:1.2;margin-bottom:calc(var(--gap)*2);}
-h1{font-size:var(--fs-h1);}
-h2{font-size:var(--fs-h2);}
-h3{font-size:var(--fs-h3);}
-button{cursor:pointer;}
-.skip-link{
-  position:absolute;
-  top:-40px;
-  left:0;
-  background:#000;
-  color:#fff;
-  padding:8px;
-  z-index:100;
-}
-.skip-link:focus{top:0;}
-.glass{
-  background:var(--color-card-bg);
-  border:1px solid var(--color-card-border);
-  border-radius:12px;
-  backdrop-filter:blur(8px);
-  padding:calc(var(--gap)*4);
-}
-.btn{
-  display:inline-block;
-  background:var(--color-accent);
-  color:#000;
-  padding:calc(var(--gap)*2) calc(var(--gap)*4);
-  border:none;
-  border-radius:6px;
-  font-weight:600;
-  text-align:center;
-}
-.btn:hover{opacity:.9;}
-.grid{
-  display:grid;
-  gap:calc(var(--gap)*4);
-}
-@media(min-width:640px){
-  .services{grid-template-columns:repeat(2,1fr);}
-}
-@media(min-width:1024px){
-  .services{grid-template-columns:repeat(4,1fr);}
-}
-.reveal{
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity .6s ease-out, transform .6s ease-out;
-}
-.reveal.visible{opacity:1;transform:none;}
-.accordion button{
-  width:100%;
-  text-align:left;
-  background:none;
-  border:none;
-  padding:calc(var(--gap)*2);
-  font-size:var(--fs-h3);
-  color:#fff;
-}
-.accordion button::after{
-  content:"▸";
-  float:right;
-  transition:transform .3s;
-}
-.accordion button[aria-expanded="true"]::after{
-  transform:rotate(90deg);
-}
-.accordion .content{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .3s ease;
-  padding:0 calc(var(--gap)*2);
-}
-.accordion .content p{
-  padding:calc(var(--gap)*2) 0;
-}
-@media(max-width:639px){
-  .container{padding:calc(var(--gap)*2);}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Austin Service Express – Family‑Owned HVAC Since 1998</title>
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --surface: #fef2f2;
+            --text: #1a1a1a;
+            --accent: #dc2626;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        header {
+            background: var(--surface);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+        .contact-info span { display: block; }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1582719478250-8c2b6b5a5c86?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--bg-white);
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+        .hero::after {
+            content:"";
+            position:absolute;
+            inset:0;
+            background:rgba(0,0,0,0.45);
+        }
+        .hero-content {
+            position:relative;
+            max-width: 800px;
+            margin:auto;
+            z-index:1;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom:0.5rem; }
+        .hero p { font-size: 1.2rem; margin-bottom:1.5rem; }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-white);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin:auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        .services, .highlights, .certifications {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .services { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .service-card, .highlight-card, .cert-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .service-card h3, .highlight-card h3, .cert-card h3 {
+            margin-top:0.5rem;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        .footer {
+            background: var(--surface);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        @media (max-width:600px){
+            .hero h1{font-size:2rem;}
+            .hero p{font-size:1rem;}
+        }
+    </style>
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<header class="container">
-  <h1>ABC Austin Service Express</h1>
-  <p class="glass" style="max-width:600px;">Your trusted HVAC partner in Austin, TX – Fast, reliable, and family‑owned service.</p>
-  <a href="#contact" class="btn" style="margin-top:calc(var(--gap)*4);display:inline-block;">Schedule Service</a>
-</header>
-
-<main id="main" class="container">
-
-  <section class="services grid reveal" aria-labelledby="services-heading">
-    <h2 id="services-heading">Our Services</h2>
-    <div class="glass">
-      <h3>AC Repair</h3>
-      <p>Quick diagnostics and repair to keep your home comfortable.</p>
-    </div>
-    <div class="glass">
-      <h3>AC Installation</h3>
-      <p>Professional installation of energy‑efficient systems.</p>
-    </div>
-    <div class="glass">
-      <h3>Duct Cleaning</h3>
-      <p>Improve air quality and system efficiency with thorough cleaning.</p>
-    </div>
-    <div class="glass">
-      <h3>Indoor Air Quality</h3>
-      <p>Solutions for healthier indoor environments.</p>
-    </div>
-  </section>
-
-  <section class="highlights grid reveal" aria-labelledby="highlights-heading" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-    <h2 id="highlights-heading">Why Choose Us</h2>
-    <div class="glass">
-      <h3>Family Owned</h3>
-      <p>We treat every customer like a neighbor.</p>
-    </div>
-    <div class="glass">
-      <h3>24/7 Emergency</h3>
-      <p>Ready to respond whenever you need us.</p>
-    </div>
-    <div class="glass">
-      <h3>Satisfaction Guaranteed</h3>
-      <p>Our work is backed by a full guarantee.</p>
-    </div>
-  </section>
-
-  <section class="faq reveal" aria-labelledby="faq-heading">
-    <h2 id="faq-heading">Frequently Asked Questions</h2>
-    <div class="accordion">
-      <div>
-        <button aria-expanded="false" aria-controls="faq1">What areas do you serve?</button>
-        <div id="faq1" class="content" role="region" aria-labelledby="faq1">
-          <p>We serve Austin and surrounding Greater Austin areas.</p>
+    <header>
+        <div class="logo">ABC Austin Service Express</div>
+        <div class="contact-info">
+            <span>Phone: <a href="tel:+15127890123">(512) 789‑0123</a></span>
+            <span>Email: <a href="mailto:info@abcaustin.com">info@abcaustin.com</a></span>
         </div>
-      </div>
-      <div>
-        <button aria-expanded="false" aria-controls="faq2">Do you offer financing?</button>
-        <div id="faq2" class="content" role="region" aria-labelledby="faq2">
-          <p>Yes, flexible financing options are available for qualifying projects.</p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reliable HVAC Solutions Since 1998</h1>
+            <p>Family‑owned, 24/7 emergency service, and satisfaction guaranteed.</p>
+            <button class="btn-primary" onclick="location.href='tel:+15127890123'">Call Now</button>
         </div>
-      </div>
-      <div>
-        <button aria-expanded="false" aria-controls="faq3">How quickly can you respond to an emergency?</button>
-        <div id="faq3" class="content" role="region" aria-labelledby="faq3">
-          <p>We aim to arrive within 1‑2 hours of your call, 24/7.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M24 4a20 20 0 100 40 20 20 0 000-40zm0 36a16 16 0 110-32 16 16 0 010 32z"/></svg>
+                <h3>AC Repair</h3>
+                <p>Fast, reliable repairs to keep your home comfortable.</p>
+            </div>
+            <div class="service-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 8h24v4H12V8zm0 8h24v4H12v-4zm0 8h24v4H12v-4z"/></svg>
+                <h3>AC Installation</h3>
+                <p>Energy‑efficient units installed by certified technicians.</p>
+            </div>
+            <div class="service-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M6 20h36v2H6v-2zm0 8h36v2H6v-2z"/></svg>
+                <h3>Duct Cleaning</h3>
+                <p>Improve airflow and indoor air quality with thorough cleaning.</p>
+            </div>
+            <div class="service-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M24 12a12 12 0 100 24 12 12 0 000-24zM12 24a12 12 0 0124 0 12 12 0 01-24 0z"/></svg>
+                <h3>Indoor Air Quality</h3>
+                <p>Solutions to keep your home’s air fresh and healthy.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact glass reveal" id="contact" aria-labelledby="contact-heading">
-    <h2 id="contact-heading">Get In Touch</h2>
-    <form action="mailto:info@abcaustin.com" method="post" enctype="text/plain">
-      <div style="margin-bottom:calc(var(--gap)*2);">
-        <label for="name">Name</label><br>
-        <input type="text" id="name" name="name" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;">
-      </div>
-      <div style="margin-bottom:calc(var(--gap)*2);">
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;">
-      </div>
-      <div style="margin-bottom:calc(var(--gap)*2);">
-        <label for="phone">Phone</label><br>
-        <input type="tel" id="phone" name="phone" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;">
-      </div>
-      <div style="margin-bottom:calc(var(--gap)*2);">
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" rows="4" required style="width:100%;padding:calc(var(--gap)*2);border:none;border-radius:4px;"></textarea>
-      </div>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <p style="margin-top:calc(var(--gap)*4);"><strong>Phone:</strong> <a href="tel:+15127890123">(512) 789-0123</a></p>
-  </section>
+    <section class="section" style="background: var(--surface);">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="highlights">
+            <div class="highlight-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 20l8 8 16-16"/></svg>
+                <h3>Family Owned</h3>
+                <p>Personalized service you can trust.</p>
+            </div>
+            <div class="highlight-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M24 4v16M24 28v4M24 36v4"/></svg>
+                <h3>24/7 Emergency</h3>
+                <p>We’re here when you need us most.</p>
+            </div>
+            <div class="highlight-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 24l8 8 16-16"/></svg>
+                <h3>Satisfaction Guaranteed</h3>
+                <p>Your comfort is our priority.</p>
+            </div>
+            <div class="highlight-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M8 20l8 8 16-16"/></svg>
+                <h3>Free Second Opinions</h3>
+                <p>No‑obligation assessments.</p>
+            </div>
+        </div>
+    </section>
 
-</main>
+    <section class="section">
+        <h2 class="section-title">Certifications & Affiliations</h2>
+        <div class="certifications">
+            <div class="cert-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M24 4l6 12h13l-10 8 4 12-10-8-10 8 4-12-10-8h13z"/></svg>
+                <h3>BBB Accredited</h3>
+            </div>
+            <div class="cert-card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 24l8 8 16-16"/></svg>
+                <h3>NATE Certified</h3>
+            </div>
+        </div>
+    </section>
 
-<footer class="container" style="font-size:0.9rem;">
-  <p>&copy; 2026 ABC Austin Service Express. All rights reserved.</p>
-  <p>1234 Austin St, Austin, TX 78701 | <a href="mailto:info@abcaustin.com">info@abcaustin.com</a></p>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  // Accordion
-  const accButtons = document.querySelectorAll('.accordion button');
-  accButtons.forEach(btn=>{
-    btn.addEventListener('click',()=> {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded',!expanded);
-      const content = document.getElementById(btn.getAttribute('aria-controls'));
-      if(!expanded){
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else {
-        content.style.maxHeight = null;
-      }
-    });
-  });
-
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:0.1});
-  reveals.forEach(el=>observer.observe(el));
-});
-</script>
+    <footer class="footer">
+        <p>&copy; 2026 ABC Austin Service Express. All rights reserved.</p>
+        <p>Phone: <a href="tel:+15127890123">(512) 789‑0123</a> | Email: <a href="mailto:info@abcaustin.com">info@abcaustin.com</a></p>
+        <p>Serving Austin, TX since 1998.</p>
+    </footer>
 </body>
 </html>
