@@ -3,520 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Family-owned HVAC service in Austin since 1998. AC, heating, duct cleaning, and indoor air quality.">
+<meta name="description" content="Family-owned HVAC service in Austin since 1998. AC, heating, duct cleaning, and indoor air quality. 24/7 emergency service.">
 <title>ABC Austin Service Express – Family-Owned Since 1998</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #ffffff;
-  --surface: #fef2f2;
-  --accent: #dc2626;
-  --text: #1a1a1a;
-  --font: 'Inter', system-ui, sans-serif;
+  --bg: #fffdf8;
+  --surface: #ffffff;
+  --accent: #c0392b;
+  --accent-dark: #a93226;
+  --accent-light: #fadbd8;
+  --text: #2c1810;
+  --text-muted: #6b5b4f;
+  --border: #e8ddd0;
+  --font-heading: 'Merriweather', Georgia, serif;
+  --font-body: 'Source Sans Pro', system-ui, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 body {
-  font-family: var(--font);
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
 }
-a.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--accent);
-  color: #000;
-  padding: 8px;
-  z-index: 10000;
-  text-decoration: none;
-  font-weight: 600;
-}
+a.skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: #fff; padding: 10px 16px; z-index: 10000; text-decoration: none; font-weight: 600; font-size: 0.875rem; }
 a.skip-link:focus { top: 0; }
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(20,20,20,0.92);
-  backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,253,248,0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem clamp(1.5rem, 4vw, 3rem);
+  display: flex; justify-content: space-between; align-items: center;
 }
-.logo {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-}
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  margin-left: 2rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-nav a:hover { color: var(--accent); }
-.phone-cta {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.phone-cta:hover {
-  background: var(--accent);
-  color: #000;
-}
+.logo { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--accent); letter-spacing: -0.01em; }
+nav { display: flex; gap: clamp(1.5rem, 3vw, 2.5rem); }
+nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; position: relative; }
+nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s; }
+nav a:hover { color: var(--accent); } nav a:hover::after { width: 100%; }
+.phone-cta { background: var(--accent); color: #fff; padding: 0.625rem 1.25rem; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 14px rgba(192,57,43,0.3); }
+.phone-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
 main { width: 100%; }
 
 .hero {
   position: relative;
-  min-height: clamp(500px, 90vh, 800px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 6rem 2rem 4rem;
+  min-height: clamp(550px, 85vh, 750px);
+  display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+  padding: clamp(4rem, 10vw, 6rem) clamp(1.5rem, 4vw, 3rem);
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%),
-    url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    linear-gradient(180deg, rgba(255,253,248,0.8) 0%, rgba(255,253,248,0.95) 100%),
+    url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+.hero-content { position: relative; z-index: 1; max-width: 900px; opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent-light); border: 1px solid var(--accent);
+  padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600;
+  color: var(--accent); margin-bottom: 1.25rem;
 }
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  animation: fadeInUp 0.8s ease-out;
-}
+.hero-badge::before { content: '★'; font-size: 1rem; }
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
 }
+.hero h1 span { color: var(--accent); }
 .hero p {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  opacity: 0.85;
-  margin-bottom: 2.5rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 65ch;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
 }
-.cta-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+.cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--accent);
-  color: #000;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--accent); color: #fff;
+  padding: 1rem 2rem; font-weight: 600; border: none; border-radius: 6px;
+  cursor: pointer; text-decoration: none; display: inline-block; font-size: 1rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192,57,43,0.35); }
 .btn-secondary {
-  background: transparent;
-  color: var(--accent);
+  background: transparent; color: var(--accent);
   border: 2px solid var(--accent);
-  padding: 1rem 2rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.2s;
+  padding: 1rem 2rem; font-weight: 600; border-radius: 6px;
+  cursor: pointer; text-decoration: none; display: inline-block; font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
 }
-.btn-secondary:hover {
-  background: var(--accent);
-  color: #000;
-}
+.btn-secondary:hover { background: var(--accent); color: #fff; }
 
-section {
-  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
-  max-width: 1200px;
-  margin: 0 auto;
+section { padding: clamp(3.5rem, 7vw, 5.5rem) clamp(1.5rem, 4vw, 3rem); max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.section-label {
+  display: inline-block; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
 }
 .section-title {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
+  line-height: 1.25;
 }
 
 .stats-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  padding: 2.5rem 0; margin: 0 auto 2rem;
+  max-width: 1000px;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
 }
-.stat {
-  text-align: center;
-  padding: 1rem;
-}
-.stat-value {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 0.3rem;
-}
+@media (max-width: 768px) { .stats-bar { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .stats-bar { grid-template-columns: 1fr; } }
+.stat { text-align: center; padding: 0 1.5rem; position: relative; }
+.stat:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 25%; height: 50%; width: 1px; background: var(--border); }
+@media (max-width: 768px) { .stat:nth-child(2)::after, .stat:last-child::after { display: none; } }
+.stat-value { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent); line-height: 1; }
+.stat-label { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 500; }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 .service-card {
-  background: var(--surface);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: transform 0.2s, border-color 0.2s;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 2rem; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  display: flex; flex-direction: column; height: 100%;
 }
-.service-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-}
-.service-card p {
-  opacity: 0.8;
-  font-size: 0.95rem;
-}
+.service-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 16px 32px rgba(192,57,43,0.1); }
+.service-icon { width: 56px; height: 56px; border-radius: 12px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent); }
+.service-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 600; margin-bottom: 0.625rem; }
+.service-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; flex-grow: 1; }
 
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+.why-choose {
+  background: linear-gradient(180deg, rgba(192,57,43,0.04) 0%, transparent 100%);
+  border-radius: 16px; padding: 3.5rem 2.5rem; margin: 2rem auto;
 }
-.highlight {
-  text-align: center;
-  padding: 1.5rem;
-}
-.highlight-icon {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
-}
-.highlight h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.4rem;
-}
-.highlight p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.why-item { text-align: center; }
+.why-icon { width: 64px; height: 64px; margin: 0 auto 1rem; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--accent); }
+.why-item h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+.why-item p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
 
-.why-us {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-.why-item {
-  text-align: center;
-}
-.why-item .icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.why-item h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-}
-.why-item p {
-  opacity: 0.85;
-}
+.cta-section { text-align: center; padding: 3.5rem 2rem; background: var(--accent); border-radius: 16px; margin: 2rem auto; }
+.cta-section h2 { font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #fff; margin-bottom: 1rem; }
+.cta-section p { color: rgba(255,255,255,0.95); margin-bottom: 2rem; max-width: 55ch; margin-left: auto; margin-right: auto; }
+.cta-section .btn-primary { background: #fff; color: var(--accent); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+.cta-section .btn-primary:hover { background: #f5f5f5; }
 
-.contact-section {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  max-width: 600px;
-  margin: 0 auto;
+.emergency-banner {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff; text-align: center; padding: 2.5rem 2rem; border-radius: 12px; margin: 2rem auto;
 }
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 1rem;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  color: var(--text);
-  font-family: var(--font);
-  font-size: 1rem;
-  transition: border-color 0.2s;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-.contact-form button[type="submit"] {
-  background: var(--accent);
-  color: #000;
-  padding: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.2s;
-}
-.contact-form button[type="submit"]:hover {
-  transform: translateY(-2px);
-}
+.emergency-banner h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: 0.5rem; }
+.emergency-banner p { font-size: 1rem; opacity: 0.9; margin-bottom: 1.25rem; }
+.emergency-banner .phone-large { font-family: var(--font-heading); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; text-decoration: none; color: #fff; transition: opacity 0.2s; }
+.emergency-banner .phone-large:hover { opacity: 0.8; }
 
-.emergency-cta {
-  background: linear-gradient(135deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 80%, #000) 100%);
-  color: #000;
-  text-align: center;
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  margin: 2rem auto;
-  max-width: 1200px;
-}
-.emergency-cta h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  margin-bottom: 1rem;
-}
-.emergency-cta a {
-  color: #000;
-  font-weight: 700;
-  text-decoration: underline;
-  font-size: 1.2rem;
-}
-
-footer {
-  padding: 2rem;
-  text-align: center;
-  opacity: 0.7;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  header { flex-direction: column; gap: 1rem; padding: 1rem; }
-  nav { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  nav a { margin: 0; }
-  .hero { padding: 5rem 1rem 3rem; }
-  .stats-bar { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 480px) {
-  .stats-bar { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-}
+footer { background: #5d4037; color: #efebe9; padding: 3.5rem clamp(1.5rem, 4vw, 3rem) 2rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto 2.5rem; }
+@media (max-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand .logo { display: block; margin-bottom: 1rem; }
+.footer-brand p { color: #efebe9; opacity: 0.8; font-size: 0.9rem; line-height: 1.7; max-width: 280px; }
+.footer-column h5 { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #ffab91; margin-bottom: 1.25rem; }
+.footer-column ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-column a { color: #efebe9; opacity: 0.8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.footer-column a:hover { color: #ffab91; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; opacity: 0.7; }
+.footer-bottom a { color: #efebe9; text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: #ffab91; }
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <header role="banner">
-  <div class="logo" aria-label="ABC Austin Service Express">ABC Austin Service Express</div>
+  <div class="logo">ABC AUSTIN</div>
   <nav role="navigation" aria-label="Main navigation">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a href="tel:(512) 789-0123" class="phone-cta" aria-label="Call (512) 789-0123">(512) 789-0123</a>
+  <a href="tel:+15123796775" class="phone-cta" aria-label="Call (512) 379-6775">(512) 379-6775</a>
 </header>
 
 <main id="main">
   <section id="home" class="hero" aria-labelledby="hero-title">
     <div class="hero-content">
-      <h1 id="hero-title">Family-Owned Since 1998</h1>
-      <p>500+ reviews, 24/7 emergency service, and a satisfaction guarantee you can count on.</p>
+      <div class="hero-badge">★ 4.9 Rating · 860+ Reviews · BBB Accredited</div>
+      <h1 id="hero-title">Family-Owned Since <span>1998</span></h1>
+      <p>27 years of honest HVAC service in Austin. Free second opinions. 24/7 emergency. Your neighbors — not a corporation — standing behind every job.</p>
       <div class="cta-group">
-        <a href="#contact" class="btn-primary" role="button">Schedule Service</a>
-        <a href="tel:(512) 789-0123" class="btn-secondary">Call Now</a>
+        <a href="#contact" class="btn-primary">Get a Free Second Opinion</a>
+        <a href="tel:+15123796775" class="btn-secondary">Call Now</a>
       </div>
     </div>
   </section>
 
-  <section aria-label="Trust indicators">
+  <section aria-label="Trust indicators" class="stats-section">
     <div class="stats-bar">
-      <div class="stat">
-        <div class="stat-value">4.8 ★</div>
-        <div class="stat-label">500+ Google Reviews</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">27+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">BBB</div>
-        <div class="stat-label">Certified Team</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">NATE</div>
-        <div class="stat-label">Licensed & Insured</div>
-      </div>
+      <div class="stat"><div class="stat-value">4.9</div><div class="stat-label">Google Rating</div></div>
+      <div class="stat"><div class="stat-value">860+</div><div class="stat-label">Verified Reviews</div></div>
+      <div class="stat"><div class="stat-value">27+</div><div class="stat-label">Years in Austin</div></div>
+      <div class="stat"><div class="stat-value">BBB</div><div class="stat-label">Accredited</div></div>
     </div>
   </section>
 
   <section id="services" aria-labelledby="services-title">
-    <h2 id="services-title" class="section-title">Our Services</h2>
+    <div class="section-header">
+      <span class="section-label">Our Services</span>
+      <h2 id="services-title" class="section-title">Complete Home Comfort</h2>
+    </div>
     <div class="services-grid">
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">🔧</div>
-        <h3>AC Repair</h3>
-        <p>Professional AC Repair services by certified technicians. Fast, reliable, and guaranteed.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">❄️</div>
-        <h3>AC Installation</h3>
-        <p>Expert AC Installation for homes and businesses. Quality workmanship you can count on.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">🔥</div>
-        <h3>Duct Cleaning</h3>
-        <p>Comprehensive Duct Cleaning solutions. Keeping your home comfortable year-round.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">🛡️</div>
-        <h3>Indoor Air Quality</h3>
-        <p>Proactive Indoor Air Quality plans to prevent breakdowns and extend system life.</p>
-      </article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">❄️</div><h3>AC Repair & Install</h3><p>Reliable cooling solutions for every budget. We repair all brands and install high-efficiency systems sized for your home.</p></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">🌬️</div><h3>Duct Cleaning</h3><p>Improve air quality and system efficiency with professional duct cleaning. Essential for allergy sufferers and older homes.</p></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">🏠</div><h3>Indoor Air Quality</h3><p>Air purifiers, filters, UV lights, and ventilation solutions. Breathe easier with a whole-home air quality system.</p></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">🛡️</div><h3>Preventative Maintenance</h3><p>Tune-ups that catch problems before they cost you. Priority scheduling, discounts on repairs, and peace of mind.</p></article>
     </div>
   </section>
 
-  <section aria-labelledby="why-title">
-    <h2 id="why-title" class="section-title">Why Choose ABC Austin Service Express</h2>
-    <div class="highlights">
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">✅</div>
-        <h4>Family Owned</h4>
-        <p>We deliver on our promises every time.</p>
-      </div>
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">💰</div>
-        <h4>24/7 Emergency</h4>
-        <p>Transparent pricing with no surprises.</p>
-      </div>
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">⚡</div>
-        <h4>Satisfaction Guaranteed</h4>
-        <p>Fast response times when you need us most.</p>
-      </div>
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">🏆</div>
-        <h4>Free Second Opinions</h4>
-        <p>Industry-leading expertise and certification.</p>
-      </div>
+  <section id="about" aria-labelledby="about-title" class="why-choose">
+    <div class="section-header">
+      <span class="section-label">Why ABC Austin</span>
+      <h2 id="about-title" class="section-title">The ABC Difference</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-icon" aria-hidden="true">👨‍👩‍👧</div><h4>Family Owned</h4><p>Not a franchise. Not a corporation. The same family has served Austin since 1998. Your technician might be the owner's son.</p></div>
+      <div class="why-item"><div class="why-icon" aria-hidden="true">⚡</div><h4>24/7 Emergency</h4><p>AC out on a July afternoon? We answer nights, weekends, and holidays. No extra holiday or after-hours fees.</p></div>
+      <div class="why-item"><div class="why-icon" aria-hidden="true">✅</div><h4>Satisfaction Guaranteed</h4><p>If we're not satisfied, you don't pay. Every job backed by our 100% satisfaction promise — no fine print.</p></div>
+      <div class="why-item"><div class="why-icon" aria-hidden="true">🔍</div><h4>Free Second Opinions</h4><p>Got a quote from another company? We'll review it free. No obligation, no pressure — just honest professional advice.</p></div>
     </div>
   </section>
 
-  <section aria-labelledby="about-title">
-    <h2 id="about-title" class="section-title">About ABC Austin Service Express</h2>
-    <div class="why-us">
-      <div class="why-item">
-        <div class="icon" aria-hidden="true">👨‍🔧</div>
-        <h4>Expert Technicians</h4>
-        <p>Our team is fully licensed, NATE-certified, and trained on the latest HVAC systems.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon" aria-hidden="true">🤝</div>
-        <h4>Trusted Service</h4>
-        <p>4.8 star rating from 500+ verified reviews. Our customers recommend us.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon" aria-hidden="true">🔒</div>
-        <h4>Guaranteed Work</h4>
-        <p>Every job comes with our satisfaction guarantee and warranty protection.</p>
-      </div>
-    </div>
+  <section class="cta-section" aria-labelledby="cta-title">
+    <h2 id="cta-title">27 Years. 860+ Families Served.</h2>
+    <p>Experience the ABC Austin difference. Free second opinion, transparent pricing, family values.</p>
+    <a href="#contact" class="btn-primary">Get Your Free Second Opinion</a>
+  </section>
+
+  <section aria-label="Emergency contact" class="emergency-banner">
+    <h2>24/7 Emergency Service</h2>
+    <p>No extra fees. No overtime charges. Just help when you need it.</p>
+    <a href="tel:+15123796775" class="phone-large">(512) 379-6775</a>
   </section>
 
   <section id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Contact Us</h2>
-    <div class="contact-section">
-      <form class="contact-form" action="mailto:info@abcaustin.com" method="post" enctype="text/plain">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <p style="text-align: center; margin-top: 1.5rem; opacity: 0.8;">
-        Or call us directly at <a href="tel:(512) 789-0123" style="color: var(--accent);">(512) 789-0123</a>
-      </p>
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <h2 id="contact-title" class="section-title">Let's Talk</h2>
     </div>
-  </section>
-
-  <section aria-label="Call to action">
-    <div class="emergency-cta">
-      <h2>24/7 Emergency Service</h2>
-      <p style="margin-bottom: 1.5rem; opacity: 0.9;">Call now for immediate assistance</p>
-      <a href="tel:(512) 789-0123" class="btn-primary">(512) 789-0123</a>
+    <div style="max-width: 600px; margin: 0 auto;">
+      <form action="mailto:info@abcaustin.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div><label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name</label><input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem;"></div>
+        <div><label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label><input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem;"></div>
+        <div><label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Phone</label><input type="tel" id="phone" name="phone" style="width: 100%; padding: 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem;"></div>
+        <div><label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">How can we help?</label><textarea id="message" name="message" rows="4" required style="width: 100%; padding: 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem; resize: vertical;"></textarea></div>
+        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+      </form>
     </div>
   </section>
 </main>
 
 <footer role="contentinfo">
-  <p>© 2026 ABC Austin Service Express. Serving Austin, TX and surrounding areas.</p>
-  <p style="margin-top: 0.5rem;">
-    <a href="mailto:info@abcaustin.com">info@abcaustin.com</a> |
-    <a href="#privacy">Privacy Policy</a>
-  </p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">ABC AUSTIN</span>
+      <p>Family-owned HVAC service in Austin, TX since 1998. Honest work, fair prices, real neighbors.</p>
+    </div>
+    <div class="footer-column"><h5>Services</h5><ul><li><a href="#services">AC Repair & Install</a></li><li><a href="#services">Duct Cleaning</a></li><li><a href="#services">Indoor Air Quality</a></li><li><a href="#services">Maintenance</a></li></ul></div>
+    <div class="footer-column"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    <div class="footer-column"><h5>Contact</h5><ul><li><a href="tel:+15123796775">(512) 379-6775</a></li><li><a href="mailto:info@abcaustin.com">info@abcaustin.com</a></li><li>Austin, TX</li><li>24/7 Emergency Available</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 ABC Austin Service Express LLC. All rights reserved.</p></div>
 </footer>
 </body>
 </html>
